@@ -22,7 +22,7 @@
     <script>
         var today = new Date();
         var year = today.getFullYear();
-        var month = today.getMonth() + 1; // getMonth()는 0부터 시작하므로 +1 해줍니다
+        var month = today.getMonth() + 1; 
         var day = today.getDate();
 
         var todayElement = document.getElementById('today');
@@ -36,7 +36,7 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            min-height: 100%;
+            min-height: 70%;
         }
 
         #calendar {
@@ -50,7 +50,7 @@
             position: absolute;
             background-color: #fff;
             border: none
-            border-radius: 5px;
+            border-radius: 20px;
         }
 
         .month {
