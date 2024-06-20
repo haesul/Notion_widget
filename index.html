@@ -129,6 +129,7 @@
         .boto-next {
             right: 10px;
             padding-left: 13px;
+             /* content: '▶'; */
         }
 
         .boto-prev {
@@ -136,12 +137,16 @@
             padding-right: 13px;
         }
         
-   </style>
-  </head>
-  <body>
-<div id="today"></div>
-<div id="calendar"></div>
-        
+     </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="today"></div>
+        <div id="calendar"></div>
+    </div>
+
+    <script>
         var months = [
             '㋀', '㋁', '㋂', '㋃', '㋄', '㋅', '㋆', '㋇', '㏨', '㏩', '㏪', '㋋'
         ];
@@ -163,14 +168,39 @@
 
         function calendar(widget, data) {
             var original = widget.getElementsByClassName('actiu')[0];
-
-            if (typeof original === 'undefined') {
+ if (typeof original === 'undefined') {
                 original = document.createElement('table');
                 original.setAttribute('data-actual',
                     data.getFullYear() + '/' +
                     data.getMonth().pad(2) + '/' +
                     data.getDate().pad(2))
                 widget.appendChild(original);
+            }
+
+            var diff = data - new Date(original.getAttribute('data-actual'));
+
+            diff = new Date(diff).getMonth();
+
+            var e = document.createElement('table');
+
+            e.className = diff === 0 ? 'amagat-esquerra' : 'amagat-dreta';
+            e.innerHTML = '';
+
+            widget.appendChild(e);
+
+            }
+
+            var diff = data - new Date(original.getAttribute('data-actual'));
+
+            diff = new Date(diff).getMonth();
+
+            var e = document.createElement('table');
+
+            e.className = diff === 0 ? 'amagat-esquerra' : 'amagat-dreta';
+            e.innerHTML = '';
+
+            widget.appendChild(e);
+
             }
 
             var diff = data - new Date(original.getAttribute('data-actual'));
