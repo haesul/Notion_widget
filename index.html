@@ -10,7 +10,6 @@
     <style>
         body {
             font-family: monospace;
-    
         }
 
         #today {
@@ -149,13 +148,23 @@
             padding-right: 13px;
         }
         
-    </style>
-</head>
-<body>
+   </style>
+  </head>
+  <body>
     <div class="wrapper">
+        <div id="today"></div>
         <div id="calendar"></div>
     </div>
     <script>
+         var today = new Date();
+        var year = today.getFullYear();
+        var month = today.getMonth() + 1;
+        var day = today.getDate();
+
+        var todayElement = document.getElementById('today');
+        var dateString = year + '년 ' + month + '월 ' + day + '일';
+        todayElement.textContent += dateString;
+        
         var months = [
             '㋀', '㋁', '㋂', '㋃', '㋄', '㋅', '㋆', '㋇', '㏨', '㏩', '㏪', '㋋'
         ];
