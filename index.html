@@ -42,6 +42,7 @@
         #calendar {
             margin: 0 auto;
             font-size: 14px;
+            margin-left: 10px;
         }
 
         table {
@@ -207,6 +208,13 @@
             var titol = document.createElement('th');
             titol.setAttribute('colspan', 7);
             titol.setAttribute('class', 'month');
+            
+            var monthNameSpan = document.createElement('span');
+    monthNameSpan.textContent = months[data.getMonth()];
+            
+             var yearSpan = document.createElement('span');
+    yearSpan.setAttribute('class', 'year');
+    yearSpan.textContent = data.getFullYear();
 
             titol.appendChild(document.createElement('span')).innerHTML =
                 months[data.getMonth()] + ' <span class="year">' + data.getFullYear() + '</span>';
