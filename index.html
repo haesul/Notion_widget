@@ -292,8 +292,9 @@ function calendar(widget, data)
             calendar(document.getElementById('calendar'), data);
         }
 
-calendar(document.getElementById('calendar'), new Date());
-
+   var data = new Date();
+        document.getElementById('calendar').addEventListener('wheel', handleScroll);
+        calendar(document.getElementById('calendar'), data);
     </script>
 </body>
 </html>
