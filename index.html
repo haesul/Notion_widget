@@ -18,18 +18,7 @@
             color: #fff;
             margin-top: 20px; 
         }
-    <script>
-        var today = new Date();
-        var year = today.getFullYear();
-        var month = today.getMonth() + 1; 
-        var day = today.getDate();
 
-        var todayElement = document.getElementById('today');
-
-        var dateString = year + '년 ' + month + '월 ' + day + '일';
-
-        todayElement.textContent += dateString;
-  
         .wrapper {
             display: flex;
             align-items: center;
@@ -155,15 +144,6 @@
         <div id="today"></div>
         <div id="calendar"></div>
     </div>
-    <script>
-         var today = new Date();
-        var year = today.getFullYear();
-        var month = today.getMonth() + 1;
-        var day = today.getDate();
-
-        var todayElement = document.getElementById('today');
-        var dateString = year + '년 ' + month + '월 ' + day + '일';
-        todayElement.textContent += dateString;
         
         var months = [
             '㋀', '㋁', '㋂', '㋃', '㋄', '㋅', '㋆', '㋇', '㏨', '㏩', '㏪', '㋋'
@@ -226,8 +206,8 @@
     yearSpan.textContent = data.getFullYear();
 
             titol.appendChild(document.createElement('span')).innerHTML =
-                months[data.getMonth()] + ' <span class="year">' + data.getFullYear() + '</span>';
-
+    '<span class="year">' + data.getFullYear() + '</span> ' + months[data.getMonth()];
+                
             fila.appendChild(titol);
             e.appendChild(fila);
 
