@@ -57,7 +57,7 @@
 
         .month {
             background-color: #BDCBD6;
-            color: #000;
+            color: #fff;
             font-size: 1.5em;
              border-top-left-radius: 10px;
              border-top-right-radius: 10px;
@@ -217,9 +217,9 @@
             var titol = document.createElement('th');
             titol.setAttribute('colspan', 7);
             titol.setAttribute('class', 'month');
-            
-            var monthNameSpan = document.createElement('span');
-    monthNameSpan.textContent = months[data.getMonth()];
+
+            var monthYearSpan = document.createElement('span');
+            monthYearSpan.innerHTML = months[data.getMonth()] + ' <span class="year">' + data.getFullYear() + '년</span>';
             
              var yearSpan = document.createElement('span');
     yearSpan.setAttribute('class', 'year');
